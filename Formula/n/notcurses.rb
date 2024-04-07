@@ -4,7 +4,7 @@ class Notcurses < Formula
   url "https://github.com/dankamongmen/notcurses/archive/refs/tags/v3.0.9.tar.gz"
   sha256 "e5cc02aea82814b843cdf34dedd716e6e1e9ca440cf0f899853ca95e241bd734"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     sha256 arm64_sonoma:   "264526a0ea6a5faf326959a7bcb688e2bb11431bf8c7f517fcd9129a3d4eb674"
@@ -28,6 +28,22 @@ class Notcurses < Formula
   depends_on "ncurses"
 
   fails_with gcc: "5"
+
+  # Fix build with FFmpeg 7.0.
+  # Remove when included in a release.
+  # https://github.com/dankamongmen/notcurses/issues/2688
+  patch do
+    url "https://github.com/dankamongmen/notcurses/commit/9d4c9e00836df4edd6db09e82e3042816b435c3c.patch?full_index=1"
+    sha256 "e977892c93b54dd86a95db7af14fcefcc4f7bd023fa3c7a8cf4d9eeefbba9883"
+  end
+  patch do
+    url "https://github.com/dankamongmen/notcurses/commit/bed402adf98ae51efeb9ac3a71f88facfbf7290c.patch?full_index=1"
+    sha256 "a6969365db2b7e59085fa382b016a0dac1a8c6a493909c8e3ac17e7f7b4dccb3"
+  end
+  patch do
+    url "https://github.com/dankamongmen/notcurses/commit/441d66a063c7fc86436ed7ff73984050434c9142.patch?full_index=1"
+    sha256 "aee69211bf5280bb773360a0f206e79f825ae86dbb7e05117d69acfa12917c13"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
