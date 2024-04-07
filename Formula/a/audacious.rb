@@ -2,6 +2,7 @@ class Audacious < Formula
   desc "Lightweight and versatile audio player"
   homepage "https://audacious-media-player.org/"
   license "BSD-2-Clause"
+  revision 1
 
   stable do
     url "https://distfiles.audacious-media-player.org/audacious-4.3.1.tar.bz2"
@@ -10,6 +11,15 @@ class Audacious < Formula
     resource "plugins" do
       url "https://distfiles.audacious-media-player.org/audacious-plugins-4.3.1.tar.bz2"
       sha256 "2dea26e3af583a2d684df240b27b2b2932bcd653df4db500a85f4fe5d5fdc8a6"
+    end
+
+    # Fixes: ../src/libaudcore/vfs.h:78:62: error: integer value -1 is outside
+    # the valid range of values [0, 3] for this enumeration type
+    # [-Wenum-constexpr-conversion]
+    # Remove when included in a release.
+    patch do
+      url "https://github.com/audacious-media-player/audacious/commit/4967240899b6f36e3e5dfc68f1b8963824562fe9.patch?full_index=1"
+      sha256 "f1232ab272927c4d042e2475d02d08e99965b5f01a5a1a7c57a76c669224d688"
     end
   end
 
