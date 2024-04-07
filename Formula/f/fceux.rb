@@ -2,7 +2,7 @@ class Fceux < Formula
   desc "All-in-one NES/Famicom Emulator"
   homepage "https://fceux.com/"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
 
   stable do
@@ -29,7 +29,7 @@ class Fceux < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@6"
   depends_on "minizip"
   depends_on "qt"
   depends_on "sdl2"
