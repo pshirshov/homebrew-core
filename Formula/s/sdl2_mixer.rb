@@ -59,7 +59,7 @@ class Sdl2Mixer < Formula
       "--enable-music-midi",
       "--enable-music-midi-fluidsynth",
       "--disable-music-midi-fluidsynth-shared",
-      "--disable-music-midi-native",
+      "--enable-music-midi-native",
       "--disable-music-midi-timidity",
       "--enable-music-ogg",
       "--enable-music-ogg-vorbis",
