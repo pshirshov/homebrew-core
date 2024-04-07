@@ -4,6 +4,7 @@ class VapoursynthSub < Formula
   url "https://github.com/vapoursynth/subtext/archive/refs/tags/R5.tar.gz"
   sha256 "d1e4649c5417e671679753840ae0931cdbd353a862333129d7bd600770fd3db8"
   license "MIT"
+  revision 1
   version_scheme 1
 
   head "https://github.com/vapoursynth/subtext.git", branch: "master"
