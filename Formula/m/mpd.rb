@@ -4,7 +4,7 @@ class Mpd < Formula
   url "https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.23.15.tar.gz"
   sha256 "d2865d8f8ea79aa509b1465b99a2b8f3f449fe894521c97feadc2dca85a6ecd2"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
@@ -21,6 +21,7 @@ class Mpd < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "chromaprint"
   depends_on "expat"
   depends_on "faad2"
   depends_on "ffmpeg"
@@ -65,6 +66,7 @@ class Mpd < Formula
       -Dsoundcloud=disabled
       -Dao=enabled
       -Dbzip2=enabled
+      -Dchromaprint=enabled
       -Dexpat=enabled
       -Dffmpeg=enabled
       -Dfluidsynth=enabled
