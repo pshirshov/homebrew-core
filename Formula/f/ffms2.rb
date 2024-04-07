@@ -4,7 +4,7 @@ class Ffms2 < Formula
   # The FFMS2 source is licensed under the MIT license, but its binaries
   # are licensed under the GPL because GPL components of FFmpeg are used.
   license "GPL-2.0"
-  revision 4
+  revision 5
   head "https://github.com/FFMS/ffms2.git", branch: "master"
 
   stable do
@@ -44,7 +44,7 @@ class Ffms2 < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@6"
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
