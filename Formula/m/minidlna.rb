@@ -4,6 +4,7 @@ class Minidlna < Formula
   url "https://downloads.sourceforge.net/project/minidlna/minidlna/1.3.3/minidlna-1.3.3.tar.gz"
   sha256 "39026c6d4a139b9180192d1c37225aa3376fdf4f1a74d7debbdbb693d996afa4"
   license "GPL-2.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "1f67ac2c286538de0c6912acb76b55a06984d581e89bd17d9f0fcceb763294fd"
@@ -24,7 +25,7 @@ class Minidlna < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@6"
   depends_on "flac"
   depends_on "jpeg-turbo"
   depends_on "libexif"
@@ -103,7 +104,7 @@ index 35b3f2b..cf425cf 100644
 --- a/kqueue.c
 +++ b/kqueue.c
 @@ -28,6 +28,7 @@
- 
+
  #include <sys/types.h>
  #include <sys/event.h>
 +#include <sys/time.h>
