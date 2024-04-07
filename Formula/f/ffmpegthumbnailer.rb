@@ -2,7 +2,7 @@ class Ffmpegthumbnailer < Formula
   desc "Create thumbnails for your video files"
   homepage "https://github.com/dirkvdb/ffmpegthumbnailer"
   license "GPL-2.0-or-later"
-  revision 9
+  revision 10
   head "https://github.com/dirkvdb/ffmpegthumbnailer.git", branch: "master"
 
   stable do
