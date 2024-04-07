@@ -5,6 +5,7 @@ class Qcli < Formula
       tag:      "v1.3.1",
       revision: "0573c33953d02db53812a2420f174d6b1233751e"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/bavc/qctools.git", branch: "master"
 
   bottle do
@@ -18,7 +19,7 @@ class Qcli < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@6"
   depends_on "qt"
   depends_on "qwt"
 
