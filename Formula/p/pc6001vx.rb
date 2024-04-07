@@ -3,7 +3,7 @@ class Pc6001vx < Formula
   # http://eighttails.seesaa.net/ gives 405 error
   homepage "https://github.com/eighttails/PC6001VX"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
   head "https://github.com/eighttails/PC6001VX.git", branch: "master"
 
   stable do
@@ -27,7 +27,7 @@ class Pc6001vx < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@6"
   depends_on "qt"
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
