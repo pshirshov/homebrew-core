@@ -4,6 +4,7 @@ class Gifski < Formula
   url "https://github.com/ImageOptim/gifski/archive/refs/tags/1.14.4.tar.gz"
   sha256 "7d6b1400833c31f6a24aac3a1b5d44c466e07f98af6d6c17487a7c8c6f4aa519"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "4cd9f0178e0bf227c0e702c48fe108790922ffec6d87c40cb59add10f3e8aa2f"
@@ -17,7 +18,7 @@ class Gifski < Formula
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@6"
 
   uses_from_macos "llvm" => :build
 
