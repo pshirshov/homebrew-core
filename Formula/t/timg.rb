@@ -4,6 +4,7 @@ class Timg < Formula
   url "https://github.com/hzeller/timg/archive/refs/tags/v1.6.0.tar.gz"
   sha256 "9e1b99b4eaed82297ad2ebbde02e3781775e3bba6d3e298d7598be5f4e1c49af"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/hzeller/timg.git", branch: "main"
 
   bottle do
