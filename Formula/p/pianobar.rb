@@ -4,7 +4,7 @@ class Pianobar < Formula
   url "https://6xq.net/pianobar/pianobar-2022.04.01.tar.bz2"
   sha256 "1670b28865a8b82a57bb6dfea7f16e2fa4145d2f354910bb17380b32c9b94763"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/PromyLOPh/pianobar.git", branch: "master"
 
   livecheck do
@@ -33,6 +33,13 @@ class Pianobar < Formula
   uses_from_macos "curl"
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
+
+  # Fix build with FFmpeg 7.0.
+  # Remove when included in a release.
+  patch do
+    url "https://github.com/PromyLOPh/pianobar/commit/8bf4c1bbaa6a533f34d74f83d72eecc0beb61d4f.patch?full_index=1"
+    sha256 "9ede8281d2c8a056b646f87582b84e20d3fc290df41c6e93336f90729794b58b"
+  end
 
   def install
     # Discard Homebrew's CFLAGS as Pianobar reportedly doesn't like them
