@@ -4,7 +4,7 @@ class Mlt < Formula
   url "https://github.com/mltframework/mlt/releases/download/v7.22.0/mlt-7.22.0.tar.gz"
   sha256 "7cf4d9573a061d76902c6e12a2f09f5f461e7c697635233df82a63a3fe4d6da6"
   license "LGPL-2.1-only"
-  revision 1
+  revision 2
   head "https://github.com/mltframework/mlt.git", branch: "master"
 
   bottle do
@@ -19,7 +19,7 @@ class Mlt < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg"
+  depends_on "ffmpeg@6"
   depends_on "fftw"
   depends_on "frei0r"
   depends_on "gdk-pixbuf"
